@@ -1,6 +1,6 @@
 // Every operator that can appear in a matchup.
 // `id` must match a row in the Supabase `operators` table (see supabase/schema.sql)
-// and the image file name in images/ (e.g. images/ash.png).
+// and the image file name in images/ (e.g. images/ash.webp).
 export const OPERATORS = [
   // Attackers
   { id: "sledge", name: "Sledge", side: "attack" },
@@ -84,7 +84,7 @@ export const OPERATORS = [
 ];
 
 export function imagePath(op) {
-  return `images/${op.id}.png`;
+  return `images/${op.id}.webp`;
 }
 
 export function initials(op) {

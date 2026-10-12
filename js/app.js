@@ -31,7 +31,7 @@ function pickPair() {
 }
 
 function renderCard(card, op) {
-  card.classList.remove("no-img");
+  card.classList.remove("loaded", "no-img");
   card.dataset.side = op.side;
   card.querySelector(".initials").textContent = initials(op);
   card.querySelector(".name").textContent = op.name;
@@ -39,10 +39,23 @@ function renderCard(card, op) {
   const img = card.querySelector("img");
   img.alt = op.name;
   img.src = imagePath(op);
+  // A cached image may already be loaded without firing a new load event.
+  if (img.complete && img.naturalWidth) card.classList.add("loaded");
+}
+
+// Load the next pair's images ahead of time so they appear instantly.
+let upcoming = null;
+
+function preload(pair) {
+  pair.forEach((op) => {
+    new Image().src = imagePath(op);
+  });
 }
 
 function nextMatchup() {
-  current = pickPair();
+  current = upcoming ?? pickPair();
+  upcoming = pickPair();
+  preload(upcoming);
   recentPairs.push(pairKey(...current));
   if (recentPairs.length > RECENT_LIMIT) recentPairs.shift();
   cards.forEach((card, i) => renderCard(card, current[i]));
@@ -66,7 +79,9 @@ function choose(index) {
 
 cards.forEach((card, i) => {
   card.addEventListener("click", () => choose(i));
-  card.querySelector("img").addEventListener("error", () => card.classList.add("no-img"));
+  const img = card.querySelector("img");
+  img.addEventListener("load", () => card.classList.add("loaded"));
+  img.addEventListener("error", () => card.classList.add("no-img"));
 });
 
 document.addEventListener("keydown", (e) => {

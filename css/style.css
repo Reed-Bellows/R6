@@ -176,9 +176,12 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Portraits are full-body, so keep the head and upper body in frame. */
+  object-position: center top;
 }
 
-.card.no-img img {
+.card.no-img img,
+.card.loaded .initials {
   display: none;
 }
 

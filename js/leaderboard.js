@@ -29,6 +29,7 @@ function render() {
         <td class="num">${r.wins}–${r.losses}</td>
         <td class="num">${winRate}</td>`;
       const img = tr.querySelector("img");
+      img.addEventListener("load", () => tr.querySelector(".initials").remove());
       img.addEventListener("error", () => img.remove());
       return tr;
     })

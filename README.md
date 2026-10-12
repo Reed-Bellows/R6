@@ -1,14 +1,14 @@
 # Siege Hypergamy
 
 A "who mogs?" voting site for Rainbow Six Siege operators. Visitors pick between two random
-operators, and the **Siege Hypergamy** page ranks every operator by Elo rating, built from
+operators, and the **Siege Hypergamy Leaderboard** page ranks every operator by Elo rating, built from
 everyone's votes.
 
 - `index.html`: the voting page
 - `hypergamy.html`: the leaderboard
 - `js/operators.js`: the operator list
 - `supabase/schema.sql`: database setup
-- `images/`: operator portraits (optional)
+- `images/`: operator portraits
 
 ## Try it locally
 

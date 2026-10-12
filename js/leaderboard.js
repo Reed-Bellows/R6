@@ -1,4 +1,4 @@
-// Siege Hypergamy page: ranks operators by Elo rating.
+// Siege Hypergamy Leaderboard page: ranks operators by Elo rating.
 import { OPERATORS, imagePath, initials } from "./operators.js";
 import { getRatings, isDemo } from "./store.js";
 

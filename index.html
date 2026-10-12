@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Who Mogs? | Siege Hypergamy</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">SIEGE<span>MOG</span></a>
+    <nav>
+      <a href="index.html" class="active">Vote</a>
+      <a href="hypergamy.html">Siege Hypergamy</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Who mogs?</h1>
+    <p class="subtitle">Click an operator, or use the ← → arrow keys.</p>
+
+    <div class="matchup">
+      <button class="card" id="left">
+        <span class="portrait"><span class="initials"></span><img alt=""></span>
+        <span class="name"></span>
+        <span class="side"></span>
+      </button>
+
+      <span class="vs">VS</span>
+
+      <button class="card" id="right">
+        <span class="portrait"><span class="initials"></span><img alt=""></span>
+        <span class="name"></span>
+        <span class="side"></span>
+      </button>
+    </div>
+
+    <button id="skip" class="skip">Skip matchup</button>
+    <p id="status" class="status" role="status"></p>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

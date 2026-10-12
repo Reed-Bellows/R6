@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Siege Hypergamy</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">SIEGE<span>MOG</span></a>
+    <nav>
+      <a href="index.html">Vote</a>
+      <a href="hypergamy.html" class="active">Siege Hypergamy</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Siege Hypergamy</h1>
+    <p class="subtitle">Every operator ranked by who mogs who, based on all votes.</p>
+
+    <div class="filters">
+      <button class="filter active" data-side="all">All</button>
+      <button class="filter" data-side="attack">Attackers</button>
+      <button class="filter" data-side="defense">Defenders</button>
+    </div>
+
+    <p id="status" class="status" role="status">Loading rankings…</p>
+
+    <div class="table-wrap">
+      <table class="rankings">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Operator</th>
+            <th>Side</th>
+            <th class="num">Rating</th>
+            <th class="num">W–L</th>
+            <th class="num">Mog %</th>
+          </tr>
+        </thead>
+        <tbody id="rankings"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script type="module" src="js/leaderboard.js"></script>
+</body>
+</html>

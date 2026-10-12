@@ -4,5 +4,5 @@
 //
 // While these are left as placeholders, the site runs in demo mode:
 // votes are saved only in your own browser.
-export const SUPABASE_URL = "YOUR_SUPABASE_URL";
-export const SUPABASE_PUBLISHABLE_KEY = "YOUR_SUPABASE_PUBLISHABLE_KEY";
+export const SUPABASE_URL = "https://ikwwyqghukcjxhioegld.supabase.co";
+export const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_c8ghQsZ-n4CE_1IqfLEUmg_gUJh-26G";

@@ -26,6 +26,9 @@ create index if not exists votes_voter_time on votes (voter_hash, created_at des
 alter table operators enable row level security;
 alter table votes enable row level security;
 
+-- Newer Supabase projects don't expose new tables to visitors automatically.
+grant select on operators to anon, authenticated;
+
 drop policy if exists "Anyone can read ratings" on operators;
 create policy "Anyone can read ratings" on operators
   for select to anon, authenticated using (true);
